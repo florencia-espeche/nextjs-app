@@ -1,26 +1,26 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "\n 🚧🏗️ Checking format, lint and types in your project before committing."
+echo " 🚧🏗️ Checking format, lint and types in your project before committing."
 
 # Check Prettier standards
 npm run check-format ||
 (
-    echo "\n ❌🟨 Prettier Check Failed. 🟨❌\n Run npm run format, add changes and try commit again.\n";
+    echo " ❌🟨 Prettier Check Failed. 🟨❌ Run npm run format, add changes and try commit again.";
     false;
 )
 
-# Check ESLint Standards
+# Check ESLint Standardsss
 npm run check-lint ||
 (
-    echo "\n ❌🟪 ESLint Check Failed. 🟪❌\n Make the required changes listed above, add changes and try to commit again.\n"
+    echo " ❌🟪 ESLint Check Failed. 🟪❌ Make the required changes listed above, add changes and try to commit again."
     false;
 )
 
 # Check tsconfig standards
 npm run check-types ||
 (
-    echo "\n ❌🟦 Type check Failed. 🟦❌\n Make the changes required above.\n"
+    echo "❌🟦 Type check Failed. 🟦❌ Make the changes required above."
     false;
 )
 
@@ -29,9 +29,9 @@ echo "🔥🚀 All passed... Now we can build. 🚀🔥"
 
 npm run build ||
 (
-    echo "\n ❌🟩 Next build Failed. 🟩❌\n View the errors above to see why.\n"
+    echo "❌🟩 Next build Failed. 🟩❌ View the errors above to see why."
     false;
 )
 
 # If everything passes... Now we can commit
-echo "✅✅ Build is completed... I am committing this now. ✅✅\n"
+echo "✅✅ Build is completed... I am committing this now. ✅✅"
